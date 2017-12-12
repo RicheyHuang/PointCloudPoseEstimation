@@ -22,12 +22,10 @@ string cam2_data_filepath  = "..//data//fraction2.pcd";
 string cam3_data_filepath  = "..//data//fraction3.pcd";
 string model_data_filepath = "..//data//model.pcd";
 
-string filename_rotate_2_to_1    = "Cam21RotationMatrix";
-string filename_rotate_3_to_1    = "Cam31RotationMatrix";
-string filename_translate_2_to_1 = "Cam21TranslationMatrix";
-string filename_translate_3_to_1 = "Cam31TranslationMatrix";
-string file_format = ".xml";
-string file_path = "..//data//";
+string filepath_rotate_2_to_1    = "..//data//Cam21RotationMatrix.xml";
+string filepath_rotate_3_to_1    = "..//data//Cam31RotationMatrix.xml";
+string filepath_translate_2_to_1 = "..//data//Cam21TranslationMatrix.xml";
+string filepath_translate_3_to_1 = "..//data//Cam31TranslationMatrix.xml";
 
 Eigen::Matrix3f rotation_matrix_2_to_1 = Eigen::Matrix3f::Identity();
 Eigen::Matrix3f rotation_matrix_3_to_1 = Eigen::Matrix3f::Identity();

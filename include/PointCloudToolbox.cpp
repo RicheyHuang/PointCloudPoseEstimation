@@ -358,8 +358,8 @@ void PointCloudSimulator::addGaussianNoiseToPoints(PointCloudT::Ptr cloud, doubl
 }
 
 void PointCloudSimulator::addGaussianNoiseToMerge(float& rotation_angle_x, float& rotation_angle_y,   float& rotation_angle_z,
-                             float& translation_x,    float& translation_y,      float& translation_z,
-                             double mean,             double standard_deviation, double seed)
+                                                  float& translation_x,    float& translation_y,      float& translation_z,
+                                                  double mean,             double standard_deviation, double seed)
 {
     boost::mt19937 rng;
     rng.seed (static_cast<unsigned int> (seed));
@@ -376,26 +376,26 @@ void PointCloudSimulator::addGaussianNoiseToMerge(float& rotation_angle_x, float
 
 ///  Implementation of Other Functions  ///
 
-void readRotationMatrixFromXml(Eigen::Matrix3f& rotate_matrix, string name, string format, string path)
+void readRotationMatrixFromXml(Eigen::Matrix3f& rotate_matrix, string file_path)
 {
-    string str = path + name + format;
-    FileStorage file(str, FileStorage::READ);
+    boost::filesystem::path filepath(file_path);
+    FileStorage file(file_path, FileStorage::READ);
     if(!file.isOpened())
         cout<<"Open File Error!"<<endl;
     Mat Matrix;
-    file[name]>>Matrix;
+    file[filepath.stem().string()]>>Matrix;
     cv2eigen(Matrix, rotate_matrix);
     file.release();
 }
 
-void readTranslationVectorFromXml(Eigen::Vector3f& translate_vector, string name, string format, string path)
+void readTranslationVectorFromXml(Eigen::Vector3f& translate_vector, string file_path)
 {
-    string str = path + name + format;
-    FileStorage file(str, FileStorage::READ);
+    boost::filesystem::path filepath(file_path);
+    FileStorage file(file_path, FileStorage::READ);
     if(!file.isOpened())
         cout<<"Open File Error!"<<endl;
     Mat Matrix;
-    file[name]>>Matrix;
+    file[filepath.stem().string()]>>Matrix;
     cv2eigen(Matrix, translate_vector);
     file.release();
 }

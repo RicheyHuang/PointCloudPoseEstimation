@@ -558,29 +558,25 @@ public:
     Description:    Read the rotation matrix from the xml file
     Calls:          None
     Input:          rotate_matrix: the matrix to store the content of file
-                    name: the name of file
-                    format: the format of file
-                    path: the file path
+                    file_path: the path of the file
     Output:         The rotation matrix read from file
     Return:         None
     Others:         The xml file is created using opencv
     *************************************************/
 
-void readRotationMatrixFromXml(Eigen::Matrix3f& rotate_matrix,string name,string format,string path);
+void readRotationMatrixFromXml(Eigen::Matrix3f& rotate_matrix,string file_path);
 
     /*************************************************
     Function:       readTranslationVectorFromXml
     Description:    Read the translation vector from the xml file
     Calls:          None
     Input:          translate_vector: the vector to store the content of file
-                    name: the name of file
-                    format: the format of file
-                    path: the file path
+                    file_path: the path of the file
     Output:         The translation vector read from file
     Return:         None
     Others:         The xml file is created using opencv
     *************************************************/
 
-void readTranslationVectorFromXml(Eigen::Vector3f& translate_vector,string name,string format,string path);
+void readTranslationVectorFromXml(Eigen::Vector3f& translate_vector,string file_path);
 
 #endif  //POINTCLOUDPOSEESTIMATION_POINTCLOUDTOOLBOX_H

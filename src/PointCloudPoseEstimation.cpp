@@ -19,10 +19,10 @@ int main()
 
     ///  read the xml files to acquire the geometric relationship between cameras  ///
 
-    readRotationMatrixFromXml   (rotation_matrix_2_to_1,    filename_rotate_2_to_1,    file_format, file_path);
-    readRotationMatrixFromXml   (rotation_matrix_3_to_1,    filename_rotate_3_to_1,    file_format, file_path);
-    readTranslationVectorFromXml(translation_vector_2_to_1, filename_translate_2_to_1, file_format, file_path);
-    readTranslationVectorFromXml(translation_vector_3_to_1, filename_translate_3_to_1, file_format, file_path);
+    readRotationMatrixFromXml   (rotation_matrix_2_to_1,    filepath_rotate_2_to_1);
+    readRotationMatrixFromXml   (rotation_matrix_3_to_1,    filepath_rotate_3_to_1);
+    readTranslationVectorFromXml(translation_vector_2_to_1, filepath_translate_2_to_1);
+    readTranslationVectorFromXml(translation_vector_3_to_1, filepath_translate_3_to_1);
 
     ///  point clouds merge  ///
 
