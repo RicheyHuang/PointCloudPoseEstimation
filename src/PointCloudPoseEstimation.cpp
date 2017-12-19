@@ -35,9 +35,11 @@ int main()
     *cloud_merged.cloud  = *cloud_cam1.cloud + *cloud_cam2.cloud;
     *cloud_merged.cloud += *cloud_cam3.cloud;
 
+    float normal_search_range  = 10;
+    float feature_search_range = 1;
 
-    FeaturesT::Ptr features_merged = cloud_merged.computeFeatures(10, 1);
-    FeaturesT::Ptr features_model  = cloud_model.computeFeatures(10, 1);
+    FeaturesT::Ptr features_merged = cloud_merged.computeFeatures(normal_search_range, feature_search_range);
+    FeaturesT::Ptr features_model  = cloud_model.computeFeatures(normal_search_range, feature_search_range);
 
     PointCloudRegistrator registrator;
 
@@ -62,7 +64,7 @@ int main()
 
     ///  set parameters for icp  ///
 
-    int   max_iteration_icp               = 70;
+    int   max_iteration_icp               = 40;
     float icp_outlier_reject_threshold    = 5e-4;
     float max_correspondence_distance_icp = 20;
 
